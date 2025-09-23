@@ -38,7 +38,7 @@ const Projects: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white"
                   >
-                    Luhn algoritm
+                    Luhn algorithm
                   </a>
                   {' '}that makes credit cards verification.
                 </>
