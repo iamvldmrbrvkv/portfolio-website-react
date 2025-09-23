@@ -1,4 +1,4 @@
-# Vladimir Borovikov - React Portfolio
+# Vladimir Borovikov - Portfolio Website (React)
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS, showcasing Vladimir Borovikov's skills as a full-stack engineering student and his journey from musician to software engineer.
 
@@ -37,10 +37,10 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 ```bash
 # Clone the repository
-git clone https://github.com/iamvldmrbrvkv/react-portfolio.git
+git clone https://github.com/iamvldmrbrvkv/portfolio-website-react.git
 
 # Navigate to project directory
-cd react-portfolio
+cd portfolio-website-react
 
 # Install dependencies
 npm install

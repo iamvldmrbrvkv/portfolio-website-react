@@ -1,4 +1,4 @@
-# Copilot Instructions for React Portfolio
+# Copilot Instructions for Portfolio Website (React)
 
 ## Project Overview
 This is a modern React TypeScript portfolio website for Vladimir Borovikov, migrated from an original HTML/CSS/JS portfolio to use Vite, React, Tailwind CSS, and Vitest for testing. The project showcases Vladimir's skills, projects, and contact information with a clean, minimal design and dark mode support.
@@ -42,7 +42,7 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 
 ### Dark Mode Implementation
 - **Toggle**: Sun icon in header with `invert` filter for dark theme
-- **Icons**: Skills and contact icons use `dark:invert` to appear white on dark background
+- **Icons**: Skills and contact icons use `dark:brightness-0 dark:invert` to appear white on dark background
 - **Classes**: Applied to document.documentElement via JavaScript
 - **Storage**: Persisted preference in localStorage
 
