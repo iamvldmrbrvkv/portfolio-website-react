@@ -1,7 +1,9 @@
-import React from 'react';
+import { useDarkMode } from '../context';
 import { skills } from '../utils/data';
 
-const Skills: React.FC = () => {
+const Skills = () => {
+  const { isDark } = useDarkMode();
+  
   return (
     <section id="skills">
       <h2 className="text-center my-[10px] mx-[50px]">Skills</h2>
@@ -11,7 +13,7 @@ const Skills: React.FC = () => {
             key={index}
             src={skill.icon} 
             alt={skill.alt}
-            className="h-[25px] dark:invert"
+            className={`h-[25px] ${isDark ? 'invert' : ''}`}
             title={skill.name}
           />
         ))}

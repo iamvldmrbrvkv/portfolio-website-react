@@ -5,7 +5,7 @@ interface DarkModeProviderProps {
   children: React.ReactNode;
 }
 
-export const DarkModeProvider: React.FC<DarkModeProviderProps> = ({ children }) => {
+export const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
   const [isDark, setIsDark] = useState<boolean>(() => {
     const saved = localStorage.getItem('darkTheme');
     return saved === 'true';

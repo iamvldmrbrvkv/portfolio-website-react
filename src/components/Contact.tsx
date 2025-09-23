@@ -1,8 +1,10 @@
-import React from 'react';
 import { contactLinks } from '../utils/data';
 import contactImage from '../assets/images/vladimir_borovkov_tells_his_secrets.png';
+import { useDarkMode } from '../context';
 
-const Contact: React.FC = () => {
+const Contact = () => {
+  const { isDark } = useDarkMode();
+  
   return (
     <section id="contact">
       <h2 className="text-center my-[10px] mx-[50px]">Contact</h2>
@@ -23,7 +25,7 @@ const Contact: React.FC = () => {
             <img 
               src={contact.icon} 
               alt={contact.alt}
-              className="h-[25px] dark:invert"
+              className={`h-[25px] ${isDark ? 'invert' : ''}`}
             />
           </a>
         ))}
