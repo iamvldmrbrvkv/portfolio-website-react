@@ -4,7 +4,7 @@
 This is a modern React TypeScript portfolio website for Vladimir Borovikov, migrated from an original HTML/CSS/JS portfolio to use Vite, React, Tailwind CSS, and Vitest for testing.
 
 ## Tech Stack
-- **Framework**: React 18 with TypeScript
+- **Framework**: React 19 with TypeScript
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS v4
 - **Testing**: Vitest + React Testing Library
