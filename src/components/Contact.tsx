@@ -18,10 +18,13 @@ const Contact: React.FC = () => {
             href={contact.url} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex flex-col items-center text-black dark:text-white hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity"
           >
-            <span className="text-2xl mb-2">{contact.icon}</span>
-            <span className="text-sm">{contact.name}</span>
+            <img 
+              src={contact.icon} 
+              alt={contact.alt}
+              className="h-[25px] dark:invert"
+            />
           </a>
         ))}
       </div>

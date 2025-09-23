@@ -60,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             <img 
               src={darkModeIcon} 
               alt="Dark mode toggle" 
-              className={`h-6 ${isDark ? 'invert' : ''}`}
+              className={`h-[25px] ${isDark ? 'invert' : ''}`}
             />
           </button>
         </div>
