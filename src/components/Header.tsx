@@ -16,9 +16,10 @@ const Header = () => {
               {location.pathname === '/' ? (
                 <a 
                   href="#about-me"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('about-me')?.scrollIntoView({ behavior: 'smooth' });
+                  onClick={() => {
+                    setTimeout(() => {
+                      document.getElementById('about-me')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 0);
                   }}
                   className="font-mono"
                 >
@@ -37,9 +38,10 @@ const Header = () => {
               {location.pathname === '/' ? (
                 <a 
                   href="#projects"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                  onClick={() => {
+                    setTimeout(() => {
+                      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 0);
                   }}
                   className="font-mono"
                 >
@@ -58,9 +60,10 @@ const Header = () => {
               {location.pathname === '/' ? (
                 <a 
                   href="#skills"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+                  onClick={() => {
+                    setTimeout(() => {
+                      document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 0);
                   }}
                   className="font-mono"
                 >
