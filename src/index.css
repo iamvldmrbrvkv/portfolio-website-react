@@ -51,3 +51,36 @@ a:hover {
   color: white;
   text-decoration: none;
 }
+
+header a.header-title {
+  text-decoration: none;
+  color: black;
+}
+
+header a.header-title:visited,
+header a.header-title:hover,
+header a.header-title:active,
+header a.header-title:focus {
+  text-decoration: none;
+  color: black;
+}
+
+header a.header-title h1 {
+  color: black;
+  text-decoration: none;
+}
+
+.dark header a.header-title {
+  color: #eee;
+}
+
+.dark header a.header-title:visited,
+.dark header a.header-title:hover,
+.dark header a.header-title:active,
+.dark header a.header-title:focus {
+  color: #eee;
+}
+
+.dark header a.header-title h1 {
+  color: #eee;
+}

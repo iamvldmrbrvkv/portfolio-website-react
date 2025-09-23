@@ -8,7 +8,9 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between [@media(max-width:768px)]:justify-center">
-      <h1 className="mx-[30px] text-center">Vladimir Borovikov</h1>
+      <Link to="/" className="mx-[30px] text-center header-title">
+        <h1 className="font-mono">Vladimir Borovikov</h1>
+      </Link>
       <nav className="mx-[30px] [@media(max-width:768px)]:mx-auto">
         <div className="flex justify-around items-center flex-wrap">
           <ul className="list-none flex gap-x-[9px]">

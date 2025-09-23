@@ -14,10 +14,8 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 
 ## Architecture Patterns
 
-## Architecture Patterns
-
 ### Component Structure
-- **Header**: Navigation with smooth scrolling, React Router links, and dark mode toggle button
+- **Header**: Navigation with smooth scrolling anchor links, BrowserRouter navigation, clickable logo, and dark mode toggle
 - **About**: Personal introduction with profile image (Memoji style)
 - **Projects**: Portfolio showcase with external links to live sites and GitHub repositories
 - **Skills**: Technology skills displayed as icons with dark mode inversion
@@ -29,7 +27,7 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 - Dark mode state managed via React Context (`DarkModeContext` and `DarkModeProvider`)
 - Dark mode persisted in localStorage as 'darkTheme' boolean
 - Component state uses React hooks (useState, useEffect)
-- React Router for navigation state management
+- BrowserRouter with basename="/portfolio-website-react/" for GitHub Pages compatibility
 - No external state management library needed
 
 ### Styling Approach
@@ -39,6 +37,7 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 - Anonymous Pro monospace font throughout
 - Black/white theme with red accent color (#ff0000)
 - Icon dark mode handling: `dark:invert` CSS filter for monochrome icons
+- Custom CSS for link states and header title styling in `index.css`
 
 ### Dark Mode Implementation
 - **Toggle**: Sun icon in header with `invert` filter for dark theme
@@ -71,7 +70,7 @@ src/
 
 ### Code Standards
 - Use TypeScript with strict type checking
-- Functional components with React hooks (most still use React.FC interface)
+- Functional components with React hooks
 - Proper semantic HTML and accessibility attributes
 - External links with `target="_blank"` and `rel="noopener noreferrer"`
 - Responsive design with Tailwind breakpoints
@@ -134,12 +133,13 @@ npm run lint        # Lint code (ESLint)
 - **Dark Mode First**: Comprehensive dark mode support with icon inversion and theme persistence
 
 ## Current Project Features
-- **Routing**: Multi-page navigation with React Router
+- **Routing**: BrowserRouter with GitHub Pages support and smooth anchor navigation
 - **Dark Mode**: Complete theme switching with icon adaptations
 - **Responsive Design**: Mobile-optimized with Tailwind breakpoints
 - **Performance**: Fast builds with Vite and optimized asset handling
 - **Testing**: Comprehensive test suite with Vitest and React Testing Library
 - **TypeScript**: Full type safety with strict configuration
+- **Clickable Logo**: Header title links to home page with custom styling
 
 ## Deployment Notes
 - Static site suitable for GitHub Pages, Netlify, Vercel, or any static hosting
@@ -147,7 +147,7 @@ npm run lint        # Lint code (ESLint)
 - Images are optimized and bundled by Vite with content hashing
 - All external links open in new tabs for better UX
 - Dark mode preference persists across sessions
-- Single-page application with client-side routing
+- BrowserRouter with basename for GitHub Pages compatibility
 
 ## Maintenance
 - Keep dependencies updated regularly (especially React, Vite, Tailwind)
@@ -167,6 +167,6 @@ npm run lint        # Lint code (ESLint)
 - **Current**: Uses Tailwind's standard breakpoints (md:, max-md:, etc.)
 - **Alternative**: Custom breakpoints can be added to `tailwind.config.js` if needed
 
-### React.FC Usage
-- **Current**: Most components still use `React.FC` interface
-- **Modern**: Can be simplified to regular function components with explicit return types
+### Header Link Styling
+- **Problem**: Header title link inherits global link styles (colors, underlines)
+- **Solution**: Use specific CSS selector `header a.header-title` with all states to override global styles
