@@ -39,7 +39,7 @@ describe('Projects', () => {
     expect(spotifyApiLink).toBeInTheDocument();
     expect(spotifyApiLink).toHaveAttribute('href', 'https://developer.spotify.com/documentation/web-api');
     
-    const luhnLink = screen.getByRole('link', { name: /luhn algoritm/i });
+    const luhnLink = screen.getByRole('link', { name: /luhn algorithm/i });
     expect(luhnLink).toBeInTheDocument();
     expect(luhnLink).toHaveAttribute('href', 'https://en.wikipedia.org/wiki/Luhn_algorithm');
   });

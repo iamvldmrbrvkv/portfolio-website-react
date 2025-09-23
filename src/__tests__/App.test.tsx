@@ -2,12 +2,24 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { DarkModeProvider } from '../context';
-import App from '../App';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Home from '../pages/Home';
+import ContactPage from '../pages/Contact';
 
 describe('App', () => {
-  // Since App already contains Router, we render without wrapping in MemoryRouter
   it('renders the portfolio application on home route', () => {
-    render(<App />);
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <DarkModeProvider>
+          <div className="min-h-screen bg-white dark:bg-gray-800 text-black dark:text-gray-100 font-mono">
+            <Header />
+            <Home />
+            <Footer />
+          </div>
+        </DarkModeProvider>
+      </MemoryRouter>
+    );
     
     // Check if main sections are present on home page
     expect(screen.getByText('Vladimir Borovikov')).toBeInTheDocument();
@@ -17,22 +29,31 @@ describe('App', () => {
   });
 
   it('renders footer with heart', () => {
-    render(<App />);
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <DarkModeProvider>
+          <div className="min-h-screen bg-white dark:bg-gray-800 text-black dark:text-gray-100 font-mono">
+            <Header />
+            <Home />
+            <Footer />
+          </div>
+        </DarkModeProvider>
+      </MemoryRouter>
+    );
     
     expect(screen.getByText(/From Russia with/)).toBeInTheDocument();
     expect(screen.getByText('♥')).toBeInTheDocument();
   });
 
-  // Test routing by testing page components independently
   it('renders contact page component', () => {
     render(
       <MemoryRouter initialEntries={['/contact']}>
         <DarkModeProvider>
-          <main>
-            <section id="contact">
-              <h2 className="text-center my-[10px] mx-[50px]">Contact</h2>
-            </section>
-          </main>
+          <div className="min-h-screen bg-white dark:bg-gray-800 text-black dark:text-gray-100 font-mono">
+            <Header />
+            <ContactPage />
+            <Footer />
+          </div>
         </DarkModeProvider>
       </MemoryRouter>
     );
