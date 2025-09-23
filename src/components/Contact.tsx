@@ -4,14 +4,14 @@ import contactImage from '../assets/images/vladimir_borovkov_tells_his_secrets.p
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="mb-8">
-      <h2 className="text-center m-4 mx-12">Contact</h2>
+    <section id="contact">
+      <h2 className="text-center my-[10px] mx-[50px]">Contact</h2>
       <img 
         src={contactImage} 
         alt="Vladimir Borovikov tells his secrets Memoji" 
-        className="h-80 block mx-auto"
+        className="h-[350px] block mx-auto my-0"
       />
-      <div className="flex justify-around border-b border-black dark:border-white p-2.5 flex-wrap gap-4">
+      <div className="flex justify-around border-b border-black dark:border-white p-[10px] flex-wrap">
         {contactLinks.map((contact, index) => (
           <a 
             key={index}

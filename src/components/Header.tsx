@@ -14,9 +14,9 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
   };
 
   return (
-    <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-2.5 flex-wrap">
-      <h1 className="mx-7 text-center">Vladimir Borovikov</h1>
-      <nav className="mx-7">
+    <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap">
+      <h1 className="mx-[30px] text-center">Vladimir Borovikov</h1>
+      <nav className="mx-[30px]">
         <div className="flex justify-around items-center flex-wrap">
           <ul className="list-none">
             <li className="inline-block">
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                   e.preventDefault();
                   handleNavClick('about-me');
                 }}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white mr-4 font-mono"
+                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white font-mono"
               >
                 About Me
               </a>
@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                   e.preventDefault();
                   handleNavClick('projects');
                 }}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white mr-4 font-mono"
+                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white font-mono"
               >
                 Projects
               </a>
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                   e.preventDefault();
                   handleNavClick('skills');
                 }}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white mr-4 font-mono"
+                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white font-mono"
               >
                 Skills
               </a>
@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
           </ul>
           <button 
             onClick={toggleDarkMode}
-            className="ml-2.5 border-none bg-transparent cursor-pointer"
+            className="ml-[10px] border-none bg-transparent cursor-pointer"
             aria-label="Toggle dark mode"
           >
             <img 

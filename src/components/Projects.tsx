@@ -3,10 +3,10 @@ import { projects } from '../utils/data';
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="mb-8">
-      <h2 className="text-center m-4 mx-12">Projects</h2>
-      <div className="border-b border-black dark:border-white p-2.5">
-        <p className="m-4 mx-12">
+    <section id="projects">
+      <h2 className="text-center my-[10px] mx-[50px]">Projects</h2>
+      <div className="border-b border-black dark:border-white p-[10px]">
+        <p className="my-[10px] mx-[50px]">
           You can find all of my projects on{' '}
           <a 
             href="https://github.com/iamvldmrbrvkv" 
@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
         </p>
         {projects.map((project, index) => (
           <div key={index} className="mb-4">
-            <p className="m-4 mx-12">
+            <p className="my-[10px] mx-[50px]">
               <a 
                 href={project.link} 
                 target="_blank" 

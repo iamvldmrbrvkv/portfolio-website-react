@@ -3,10 +3,10 @@ import profileImage from '../assets/images/vladimir_borovikov_with_laptop.png';
 
 const About: React.FC = () => {
   return (
-    <section id="about-me" className="mb-8">
-      <h2 className="text-center m-4 mx-12">About Me</h2>
-      <div className="flex justify-between items-center border-b border-black dark:border-white p-2.5 max-md:flex-wrap max-md:justify-center">
-        <p className="m-4 mx-12">
+    <section id="about-me">
+      <h2 className="text-center my-[10px] mx-[50px]">About Me</h2>
+      <div className="flex justify-between items-center border-b border-black dark:border-white p-[10px] max-md:flex-wrap max-md:justify-center">
+        <p className="my-[10px] mx-[50px]">
           Hi, I'm Vladimir Borovikov, a full-stack engineering student at{' '}
           <a 
             href="https://www.codecademy.com/" 
@@ -22,7 +22,7 @@ const About: React.FC = () => {
         <img 
           src={profileImage} 
           alt="Vladimir Borovikov with laptop Memoji" 
-          className="h-80"
+          className="h-[350px]"
         />
       </div>
     </section>
