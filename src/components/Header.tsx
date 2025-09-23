@@ -12,8 +12,8 @@ const Header: React.FC = () => {
       <h1 className="mx-[30px] text-center">Vladimir Borovikov</h1>
       <nav className="mx-[30px] max-md:mx-auto">
         <div className="flex justify-around items-center flex-wrap">
-          <ul className="list-none space-x-4">
-            <li className="inline-block">
+          <ul className="list-none flex gap-x-[9px]">
+            <li>
               {location.pathname === '/' ? (
                 <a 
                   href="#about-me"
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
                 </Link>
               )}
             </li>
-            <li className="inline-block">
+            <li>
               {location.pathname === '/' ? (
                 <a 
                   href="#projects"
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
                 </Link>
               )}
             </li>
-            <li className="inline-block">
+            <li>
               {location.pathname === '/' ? (
                 <a 
                   href="#skills"
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
                 </Link>
               )}
             </li>
-            <li className="inline-block">
+            <li>
               <Link 
                 to="/contact"
                 className="font-mono"
