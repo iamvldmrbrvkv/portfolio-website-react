@@ -1,7 +1,6 @@
-import React from 'react';
 import { skills } from '../utils/data';
 
-const Skills: React.FC = () => {
+const Skills = () => {
   return (
     <section id="skills">
       <h2 className="text-center my-[10px] mx-[50px]">Skills</h2>

@@ -1,16 +1,15 @@
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDarkMode } from '../context';
 import darkModeIcon from '../assets/images/dark_mode_button_sun.png';
 
-const Header: React.FC = () => {
+const Header = () => {
   const { isDark, toggleDarkMode } = useDarkMode();
   const location = useLocation();
 
   return (
-    <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between max-md:justify-center">
+    <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap max-768:justify-center">
       <h1 className="mx-[30px] text-center">Vladimir Borovikov</h1>
-      <nav className="mx-[30px] max-md:mx-auto">
+      <nav className="mx-[30px] max-768:mx-auto">
         <div className="flex justify-around items-center flex-wrap">
           <ul className="list-none flex gap-x-[9px]">
             <li>

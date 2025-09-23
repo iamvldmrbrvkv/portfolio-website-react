@@ -1,8 +1,7 @@
-import React from 'react';
 import { contactLinks } from '../utils/data';
 import contactImage from '../assets/images/vladimir_borovkov_tells_his_secrets.png';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   return (
     <section id="contact">
       <h2 className="text-center my-[10px] mx-[50px]">Contact</h2>

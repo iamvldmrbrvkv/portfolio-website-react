@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Projects: React.FC = () => {
+const Projects = () => {
   return (
     <section id="projects">
       <h2 className="text-center my-[10px] mx-[50px]">Projects</h2>

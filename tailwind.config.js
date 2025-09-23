@@ -13,6 +13,9 @@ export default {
       colors: {
         'portfolio-red': '#ff0000',
       },
+      screens: {
+        'max-768': {'max': '768px'},
+      },
     },
   },
   plugins: [],
