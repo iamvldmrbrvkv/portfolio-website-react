@@ -1,17 +1,22 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { DarkModeProvider } from '../context';
 import Header from '../components/Header';
 
 describe('Header', () => {
-  const mockOnNavigate = vi.fn();
+  const renderHeader = (initialEntries: string[] = ['/']) => {
+    return render(
+      <MemoryRouter initialEntries={initialEntries}>
+        <DarkModeProvider>
+          <Header />
+        </DarkModeProvider>
+      </MemoryRouter>
+    );
+  };
 
   it('renders navigation links', () => {
-    render(
-      <DarkModeProvider>
-        <Header onNavigate={mockOnNavigate} />
-      </DarkModeProvider>
-    );
+    renderHeader();
     
     expect(screen.getByText('Vladimir Borovikov')).toBeInTheDocument();
     expect(screen.getByText('About Me')).toBeInTheDocument();
@@ -20,27 +25,30 @@ describe('Header', () => {
     expect(screen.getByText('Contact')).toBeInTheDocument();
   });
 
-  it('calls onNavigate when navigation links are clicked', () => {
-    render(
-      <DarkModeProvider>
-        <Header onNavigate={mockOnNavigate} />
-      </DarkModeProvider>
-    );
+  it('renders Contact as link to /contact route', () => {
+    renderHeader();
     
-    fireEvent.click(screen.getByText('About Me'));
-    expect(mockOnNavigate).toHaveBeenCalledWith('about-me');
-    
-    fireEvent.click(screen.getByText('Projects'));
-    expect(mockOnNavigate).toHaveBeenCalledWith('projects');
+    const contactLink = screen.getByRole('link', { name: 'Contact' });
+    expect(contactLink).toHaveAttribute('href', '/contact');
   });
 
   it('renders dark mode toggle button', () => {
-    render(
-      <DarkModeProvider>
-        <Header onNavigate={mockOnNavigate} />
-      </DarkModeProvider>
-    );
+    renderHeader();
     
     expect(screen.getByLabelText('Toggle dark mode')).toBeInTheDocument();
+  });
+
+  it('renders navigation for home page with scroll anchors', () => {
+    renderHeader(['/']);
+    
+    const aboutLink = screen.getByText('About Me');
+    expect(aboutLink).toHaveAttribute('href', '#about-me');
+  });
+
+  it('renders navigation for contact page with home links', () => {
+    renderHeader(['/contact']);
+    
+    const aboutLink = screen.getByRole('link', { name: 'About Me' });
+    expect(aboutLink).toHaveAttribute('href', '/#about-me');
   });
 });
