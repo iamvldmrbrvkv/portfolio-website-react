@@ -79,7 +79,7 @@ const Projects = () => {
             rel="noopener noreferrer"
             className="font-mono"
           >
-            Luhn algoritm
+            Luhn algorithm
           </a>
           {' that makes credit cards verification.'}
         </p>
