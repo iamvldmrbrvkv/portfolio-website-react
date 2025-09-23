@@ -46,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     title: "Credit Card Checker",
-    description: "JavaScript project with Luhn algorithm that makes credit cards verification.",
+    description: "JavaScript project with Luhn algoritm that makes credit cards verification.",
     link: "https://github.com/iamvldmrbrvkv/credit-card-checker"
   },
   {

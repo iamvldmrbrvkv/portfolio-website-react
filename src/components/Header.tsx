@@ -20,36 +20,52 @@ const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
         <div className="flex justify-around items-center flex-wrap">
           <ul className="list-none">
             <li className="inline-block">
-              <button 
-                onClick={() => handleNavClick('about-me')}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white mr-4 bg-transparent border-none cursor-pointer font-mono"
+              <a 
+                href="#about-me"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('about-me');
+                }}
+                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white mr-4 font-mono"
               >
                 About Me
-              </button>
+              </a>
             </li>
             <li className="inline-block">
-              <button 
-                onClick={() => handleNavClick('projects')}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white mr-4 bg-transparent border-none cursor-pointer font-mono"
+              <a 
+                href="#projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('projects');
+                }}
+                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white mr-4 font-mono"
               >
                 Projects
-              </button>
+              </a>
             </li>
             <li className="inline-block">
-              <button 
-                onClick={() => handleNavClick('skills')}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white mr-4 bg-transparent border-none cursor-pointer font-mono"
+              <a 
+                href="#skills"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('skills');
+                }}
+                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white mr-4 font-mono"
               >
                 Skills
-              </button>
+              </a>
             </li>
             <li className="inline-block">
-              <button 
-                onClick={() => handleNavClick('contact')}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white bg-transparent border-none cursor-pointer font-mono"
+              <a 
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('contact');
+                }}
+                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white font-mono"
               >
                 Contact
-              </button>
+              </a>
             </li>
           </ul>
           <button 
