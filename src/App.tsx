@@ -8,7 +8,7 @@ import ContactPage from "./pages/Contact";
 function App() {
   return (
     <DarkModeProvider>
-      <Router>
+      <Router basename="/portfolio-website-react/">
         <div className="min-h-screen bg-white dark:bg-gray-800 text-black dark:text-gray-100 font-mono">
           <Header />
           <Routes>
