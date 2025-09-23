@@ -1,71 +1,88 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useDarkMode } from '../context';
 import darkModeIcon from '../assets/images/dark_mode_button_sun.png';
 
-interface HeaderProps {
-  onNavigate: (section: string) => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
+const Header: React.FC = () => {
   const { isDark, toggleDarkMode } = useDarkMode();
-
-  const handleNavClick = (section: string) => {
-    onNavigate(section);
-  };
+  const location = useLocation();
 
   return (
-    <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap">
+    <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between max-md:justify-center">
       <h1 className="mx-[30px] text-center">Vladimir Borovikov</h1>
-      <nav className="mx-[30px]">
+      <nav className="mx-[30px] max-md:mx-auto">
         <div className="flex justify-around items-center flex-wrap">
-          <ul className="list-none">
+          <ul className="list-none space-x-4">
             <li className="inline-block">
-              <a 
-                href="#about-me"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('about-me');
-                }}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white font-mono"
-              >
-                About Me
-              </a>
+              {location.pathname === '/' ? (
+                <a 
+                  href="#about-me"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('about-me')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="font-mono"
+                >
+                  About Me
+                </a>
+              ) : (
+                <Link 
+                  to="/#about-me"
+                  className="font-mono"
+                >
+                  About Me
+                </Link>
+              )}
             </li>
             <li className="inline-block">
-              <a 
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('projects');
-                }}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white font-mono"
-              >
-                Projects
-              </a>
+              {location.pathname === '/' ? (
+                <a 
+                  href="#projects"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="font-mono"
+                >
+                  Projects
+                </a>
+              ) : (
+                <Link 
+                  to="/#projects"
+                  className="font-mono"
+                >
+                  Projects
+                </Link>
+              )}
             </li>
             <li className="inline-block">
-              <a 
-                href="#skills"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('skills');
-                }}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white font-mono"
-              >
-                Skills
-              </a>
+              {location.pathname === '/' ? (
+                <a 
+                  href="#skills"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="font-mono"
+                >
+                  Skills
+                </a>
+              ) : (
+                <Link 
+                  to="/#skills"
+                  className="font-mono"
+                >
+                  Skills
+                </Link>
+              )}
             </li>
             <li className="inline-block">
-              <a 
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('contact');
-                }}
-                className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white font-mono"
+              <Link 
+                to="/contact"
+                className="font-mono"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
           <button 
