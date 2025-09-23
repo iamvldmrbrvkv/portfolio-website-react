@@ -8,9 +8,9 @@ const Header: React.FC = () => {
   const location = useLocation();
 
   return (
-    <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap">
+    <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between max-md:justify-center">
       <h1 className="mx-[30px] text-center">Vladimir Borovikov</h1>
-      <nav className="mx-[30px]">
+      <nav className="mx-[30px] max-md:mx-auto">
         <div className="flex justify-around items-center flex-wrap">
           <ul className="list-none space-x-4">
             <li className="inline-block">
