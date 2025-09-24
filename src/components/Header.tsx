@@ -7,8 +7,11 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full z-51 bg-white dark:bg-[rgb(32,33,36)] flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between [@media(max-width:768px)]:justify-center">
-      <Link to="/" className="mx-[30px] text-center header-title">
+    <header className="fixed top-0 left-0 right-0 w-full z-1 bg-white dark:bg-[rgb(32,33,36)] flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between [@media(max-width:768px)]:justify-center">
+      <Link 
+        to="/" 
+        className="mx-[30px] text-center no-underline hover:no-underline focus:no-underline active:no-underline text-black dark:text-[#eee] visited:text-black dark:visited:text-[#eee]"
+      >
         <h1 className="text-[32px]">Vladimir Borovikov</h1>
       </Link>
       <nav className="mx-[30px] [@media(max-width:768px)]:mx-auto">
