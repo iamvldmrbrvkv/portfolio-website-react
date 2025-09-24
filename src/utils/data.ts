@@ -22,39 +22,6 @@ import twitterLogo from '../assets/images/logos/twitter-logo.png';
 
 export const projects: Project[] = [
   {
-    title: "Tea Cozy",
-    description: "Simple HTML & CSS project.",
-    link: "https://iamvldmrbrvkv.github.io/tea-cozy/",
-    github: "https://github.com/iamvldmrbrvkv/tea-cozy.git"
-  },
-  {
-    title: "Bugs Academy",
-    description: "Flexbox project, full of programmers jokes, like 'how to center a div' and other stuff.",
-    link: "https://iamvldmrbrvkv.github.io/bugs-academy/",
-    github: "https://github.com/iamvldmrbrvkv/bugs-academy.git"
-  },
-  {
-    title: "Sunday League",
-    description: "Responsive website, adaptive for mobile and desktop.",
-    link: "https://iamvldmrbrvkv.github.io/sunday-league/",
-    github: "https://github.com/iamvldmrbrvkv/sunday-league.git"
-  },
-  {
-    title: "Mysterious Organism",
-    description: "JavaScript project about DNA and mutations.",
-    link: "https://github.com/iamvldmrbrvkv/mysterious-organism"
-  },
-  {
-    title: "Credit Card Checker",
-    description: "JavaScript project with Luhn algoritm that makes credit cards verification.",
-    link: "https://github.com/iamvldmrbrvkv/credit-card-checker"
-  },
-  {
-    title: "Mixed Messages",
-    description: "JavaScript project that generates random messages each time a user runs the program.",
-    link: "https://github.com/iamvldmrbrvkv/mixed_messages"
-  },
-  {
     title: "Jammming",
     description: "The app created using knowledge of React components, passing state, and requests with the Spotify API to build a website that allows users to search the Spotify library, create a custom playlist, then save it to their Spotify account.",
     link: "https://github.com/iamvldmrbrvkv/jammming"
@@ -63,6 +30,23 @@ export const projects: Project[] = [
     title: "Reddit Client",
     description: "The app for Reddit using everything I've learned in Front-End, including React and Redux. I used minimal CSS styling, because wanted to create the old fashioned atmosphere, when only HTML was available. Reddit is a website where people share links to articles, media and other things on the web. The Reddit API provides data which I integrated into my application. The application allow users to view and search posts and comments provided by the API.",
     link: "https://github.com/iamvldmrbrvkv/reddit-client"
+  },
+  {
+    title: "Test App",
+    description: "Interactive test application with randomized questions and answers, progress tracking, and results visualization. Built using React, Vite, Redux Toolkit for state management, and MSW for API mocking.",
+    link: "https://github.com/iamvldmrbrvkv/test"
+  },
+  {
+    title: "Canvas Drawing App",
+    description: "Interactive web application for creating and editing shapes on a canvas. Features include adding, moving, resizing shapes, changing colors, canvas zoom and pan functionality. Built with TypeScript, React, React-Konva, and Material-UI.",
+    link: "https://zesty-chebakia-2069ac.netlify.app/",
+    github: "https://github.com/iamvldmrbrvkv/canvas-drawing-app"
+  },
+  {
+    title: "File Uploader Component",
+    description: "Custom web component for file uploading with drag-and-drop support, progress tracking, and error handling. Supports .txt, .json, and .csv files up to 1KB. Built with vanilla JavaScript and Shadow DOM.",
+    link: "https://delightful-paletas-d6a249.netlify.app/",
+    github: "https://github.com/iamvldmrbrvkv/file-uploader-component"
   }
 ];
 

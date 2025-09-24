@@ -6,15 +6,7 @@ const About = () => {
       <h2 className="text-center my-[10px] mx-[50px]">About Me</h2>
       <div className="flex justify-between items-center border-b border-black dark:border-white p-[10px] [@media(max-width:768px)]:flex-wrap [@media(max-width:768px)]:justify-center">
         <p className="my-[10px] mx-[50px]">
-          Hi, I'm Vladimir Borovikov, a full-stack engineering student at{' '}
-          <a 
-            href="https://www.codecademy.com/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-black dark:text-white underline decoration-red-500 hover:no-underline visited:text-red-500 visited:decoration-black dark:visited:text-blue-400 dark:visited:decoration-white"
-          >
-            Codecademy.
-          </a>{' '}
+          Hi, I'm Vladimir Borovikov, a frontend engineer. 
           In the past I was a musician and art worker, but now I decided become a software engineer. 
           In my spare time I like walking in nature, playing video games and watching coding dreams when I'm sleeping.
         </p>

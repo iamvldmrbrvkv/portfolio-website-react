@@ -8,16 +8,7 @@ describe('About', () => {
     
     expect(screen.getByText('About Me')).toBeInTheDocument();
     expect(screen.getByText(/Hi, I'm Vladimir Borovikov/)).toBeInTheDocument();
-    expect(screen.getByText(/full-stack engineering student/)).toBeInTheDocument();
-  });
-
-  it('renders Codecademy link', () => {
-    render(<About />);
-    
-    const codecademyLink = screen.getByRole('link', { name: /codecademy/i });
-    expect(codecademyLink).toBeInTheDocument();
-    expect(codecademyLink).toHaveAttribute('href', 'https://www.codecademy.com/');
-    expect(codecademyLink).toHaveAttribute('target', '_blank');
+    expect(screen.getByText(/frontend engineer/)).toBeInTheDocument();
   });
 
   it('renders profile image', () => {
@@ -25,5 +16,12 @@ describe('About', () => {
     
     const profileImage = screen.getByAltText('Vladimir Borovikov with laptop Memoji');
     expect(profileImage).toBeInTheDocument();
+  });
+
+  it('displays correct career information', () => {
+    render(<About />);
+    
+    expect(screen.getByText(/In the past I was a musician and art worker/)).toBeInTheDocument();
+    expect(screen.getByText(/watching coding dreams when I'm sleeping/)).toBeInTheDocument();
   });
 });
