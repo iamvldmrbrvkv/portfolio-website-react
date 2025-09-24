@@ -10,6 +10,14 @@
   font-family: 'Anonymous Pro', monospace;
 }
 
+header {
+  background: white;
+}
+
+.dark header {
+  background: rgb(32, 33, 36);
+}
+
 body {
   color: black;
   background: white;
