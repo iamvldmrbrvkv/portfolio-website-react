@@ -28,20 +28,16 @@ const Projects = () => {
               >
                 {project.title}
               </a>
+              {' '}
+              <a 
+                href={project.github}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-mono"
+              >
+                (GitHub)
+              </a>
               {' - '}{project.description}
-              {project.github && (
-                <>
-                  {' '}
-                  <a 
-                    href={project.github}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="font-mono"
-                  >
-                    (GitHub)
-                  </a>
-                </>
-              )}
             </p>
             <br />
           </div>
