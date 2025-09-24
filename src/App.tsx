@@ -11,10 +11,12 @@ function App() {
       <Router basename="/portfolio-website-react/">
         <div className="min-h-screen bg-white dark:bg-gray-800 text-black dark:text-gray-100 font-mono">
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
+          <div className="pt-[54px] [@media(max-width:768px)]:pt-[80px]">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </div>
           <Footer />
         </div>
       </Router>

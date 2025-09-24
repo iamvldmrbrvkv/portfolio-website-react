@@ -7,7 +7,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between [@media(max-width:768px)]:justify-center">
+    <header className="fixed top-0 left-0 right-0 w-full z-50 bg-white dark:bg-gray-800 flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between [@media(max-width:768px)]:justify-center">
       <Link to="/" className="mx-[30px] text-center header-title">
         <h1 className="font-mono">Vladimir Borovikov</h1>
       </Link>
