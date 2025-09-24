@@ -6,7 +6,7 @@ const Skills = () => {
   
   return (
     <section id="skills">
-      <h2 className="text-center my-[10px] mx-[50px]">Skills</h2>
+      <h2 className="text-[24px] text-center my-[10px] mx-[50px]">Skills</h2>
       <div className="flex justify-around border-b border-black dark:border-white p-[10px] flex-wrap">
         {skills.map((skill, index) => (
           <img 

@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Projects from '../components/Projects';
+import { projects } from '../utils/data';
 
 describe('Projects', () => {
   it('renders projects section', () => {
@@ -29,16 +30,25 @@ describe('Projects', () => {
     expect(screen.getByText('File Uploader Component')).toBeInTheDocument();
   });
 
-  it('renders project links with correct attributes', () => {
+  it('renders project links and GitHub links with correct attributes', () => {
     render(<Projects />);
-    
-    const jammingLink = screen.getByRole('link', { name: 'Jammming' });
-    expect(jammingLink).toBeInTheDocument();
-    expect(jammingLink).toHaveAttribute('href', 'https://github.com/iamvldmrbrvkv/jammming');
-    expect(jammingLink).toHaveAttribute('target', '_blank');
-    
-    const canvasAppLink = screen.getByRole('link', { name: 'Canvas Drawing App' });
-    expect(canvasAppLink).toBeInTheDocument();
-    expect(canvasAppLink).toHaveAttribute('href', 'https://zesty-chebakia-2069ac.netlify.app/');
+
+    // Title links should point to the live project URL
+    projects.forEach(project => {
+      const titleLink = screen.getByRole('link', { name: project.title });
+      expect(titleLink).toBeInTheDocument();
+      expect(titleLink).toHaveAttribute('href', project.link);
+      expect(titleLink).toHaveAttribute('target', '_blank');
+      expect(titleLink).toHaveAttribute('rel', 'noopener noreferrer');
+    });
+
+    // Each project also has a generic (GitHub) link in the same order
+    const githubLinks = screen.getAllByRole('link', { name: '(GitHub)' });
+    expect(githubLinks).toHaveLength(projects.length);
+    githubLinks.forEach((linkEl, idx) => {
+      expect(linkEl).toHaveAttribute('href', projects[idx].github);
+      expect(linkEl).toHaveAttribute('target', '_blank');
+      expect(linkEl).toHaveAttribute('rel', 'noopener noreferrer');
+    });
   });
 });

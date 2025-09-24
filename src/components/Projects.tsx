@@ -3,7 +3,7 @@ import { projects } from '../utils/data';
 const Projects = () => {
   return (
     <section id="projects">
-      <h2 className="text-center my-[10px] mx-[50px]">Projects</h2>
+      <h2 className="text-[24px] text-center my-[10px] mx-[50px]">Projects</h2>
       <div className="border-b border-black dark:border-white p-[10px]">
         <p className="my-[10px] mx-[50px]">
           You can find all of my projects on{' '}
@@ -11,7 +11,6 @@ const Projects = () => {
             href="https://github.com/iamvldmrbrvkv" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="font-mono"
           >
             GitHub.
           </a>
@@ -24,7 +23,6 @@ const Projects = () => {
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="font-mono"
               >
                 {project.title}
               </a>
@@ -33,7 +31,6 @@ const Projects = () => {
                 href={project.github}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="font-mono"
               >
                 (GitHub)
               </a>

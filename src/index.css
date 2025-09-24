@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-* {
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-anonymous-pro: "Anonymous Pro", monospace;
+}
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -91,4 +94,4 @@ header a.header-title h1 {
 
 .dark header a.header-title h1 {
   color: #eee;
-}
+} */

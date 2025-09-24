@@ -9,7 +9,7 @@ function App() {
   return (
     <DarkModeProvider>
       <Router basename="/portfolio-website-react/">
-        <div className="min-h-screen bg-white dark:bg-gray-800 text-black dark:text-gray-100 font-mono">
+        <div className="min-h-screen bg-white dark:bg-[rgb(32,33,36)] text-black dark:text-gray-100">
           <Header />
           <div className="pt-[113px] [@media(min-width:376px)]:pt-[81px] [@media(min-width:426px)]:pt-[54px] [@media(min-width:769px)]:pt-[53px]">
             <Routes>
