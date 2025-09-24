@@ -7,7 +7,7 @@ const Contact = () => {
   
   return (
     <section id="contact">
-      <h2 className="text-center my-[10px] mx-[50px]">Contact</h2>
+      <h2 className="text-[24px] text-center my-[10px] mx-[50px]">Contact</h2>
       <img 
         src={contactImage} 
         alt="Vladimir Borovikov tells his secrets Memoji" 

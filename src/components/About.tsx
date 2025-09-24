@@ -3,7 +3,7 @@ import profileImage from '../assets/images/vladimir_borovikov_with_laptop.png';
 const About = () => {
   return (
     <section id="about-me">
-      <h2 className="text-center my-[10px] mx-[50px]">About Me</h2>
+      <h2 className="text-[24px] text-center my-[10px] mx-[50px]">About Me</h2>
       <div className="flex justify-between items-center border-b border-black dark:border-white p-[10px] [@media(max-width:768px)]:flex-wrap [@media(max-width:768px)]:justify-center">
         <p className="my-[10px] mx-[50px]">
           Hi, I'm Vladimir Borovikov, a frontend engineer. 

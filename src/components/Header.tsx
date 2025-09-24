@@ -7,9 +7,9 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full z-50 bg-white dark:bg-gray-800 flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between [@media(max-width:768px)]:justify-center">
+    <header className="fixed top-0 left-0 right-0 w-full z-51 bg-white dark:bg-[rgb(32,33,36)] flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between [@media(max-width:768px)]:justify-center">
       <Link to="/" className="mx-[30px] text-center header-title">
-        <h1 className="font-mono">Vladimir Borovikov</h1>
+        <h1 className="text-[32px]">Vladimir Borovikov</h1>
       </Link>
       <nav className="mx-[30px] [@media(max-width:768px)]:mx-auto">
         <div className="flex justify-around items-center flex-wrap">
@@ -23,14 +23,12 @@ const Header = () => {
                       document.getElementById('about-me')?.scrollIntoView({ behavior: 'smooth' });
                     }, 0);
                   }}
-                  className="font-mono"
                 >
                   About Me
                 </a>
               ) : (
                 <Link 
                   to="/#about-me"
-                  className="font-mono"
                 >
                   About Me
                 </Link>
@@ -45,14 +43,12 @@ const Header = () => {
                       document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
                     }, 0);
                   }}
-                  className="font-mono"
                 >
                   Projects
                 </a>
               ) : (
                 <Link 
                   to="/#projects"
-                  className="font-mono"
                 >
                   Projects
                 </Link>
@@ -67,14 +63,12 @@ const Header = () => {
                       document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
                     }, 0);
                   }}
-                  className="font-mono"
                 >
                   Skills
                 </a>
               ) : (
                 <Link 
                   to="/#skills"
-                  className="font-mono"
                 >
                   Skills
                 </Link>
@@ -83,7 +77,6 @@ const Header = () => {
             <li>
               <Link 
                 to="/contact"
-                className="font-mono"
               >
                 Contact
               </Link>
