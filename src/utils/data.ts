@@ -24,19 +24,19 @@ export const projects: Project[] = [
   {
     title: "Jammming",
     description: "The app created using knowledge of React components, passing state, and requests with the Spotify API to build a website that allows users to search the Spotify library, create a custom playlist, then save it to their Spotify account.",
-    link: "https://github.com/iamvldmrbrvkv/jammming",
+    link: "https://jammming-app-by-vladimir-borovikov.netlify.app/",
     github: "https://github.com/iamvldmrbrvkv/jammming"
   },
   {
     title: "Reddit Client",
     description: "The app for Reddit using everything I've learned in Front-End, including React and Redux. I used minimal CSS styling, because wanted to create the old fashioned atmosphere, when only HTML was available. Reddit is a website where people share links to articles, media and other things on the web. The Reddit API provides data which I integrated into my application. The application allow users to view and search posts and comments provided by the API.",
-    link: "https://github.com/iamvldmrbrvkv/reddit-client",
+    link: "https://reddit-client-by-vladimir-borovikov.netlify.app/",
     github: "https://github.com/iamvldmrbrvkv/reddit-client"
   },
   {
     title: "Test App",
     description: "Interactive test application with randomized questions and answers, progress tracking, and results visualization. Built using React, Vite, Redux Toolkit for state management, and MSW for API mocking.",
-    link: "https://github.com/iamvldmrbrvkv/test",
+    link: "https://rococo-gingersnap-7c0f38.netlify.app/",
     github: "https://github.com/iamvldmrbrvkv/test"
   },
   {
