@@ -24,27 +24,33 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 - **Pages**: Home (main portfolio) and Contact (dedicated contact page)
 
 ### State Management
-- Dark mode state managed via React Context (`DarkModeContext` and `DarkModeProvider`)
-- Dark mode persisted in localStorage as 'darkTheme' boolean
+- Advanced theme system managed via React Context (`DarkModeContext` and `DarkModeProvider`)
+- Three-position theme mode: 'light' | 'dark' | 'system' (default: 'system')
+- Theme mode persisted in localStorage as 'themeMode' string
+- System theme detection with `window.matchMedia('(prefers-color-scheme: dark)')`
 - Component state uses React hooks (useState, useEffect)
 - BrowserRouter with basename="/portfolio-website-react/" for GitHub Pages compatibility
 - No external state management library needed
 
 ### Styling Approach
 - Tailwind CSS utility classes with native Vite integration using v4.1.13 syntax
-- Dark mode using `dark:` prefixes and class-based strategy (`darkMode: 'class'`)
-- Responsive design with Tailwind's breakpoint system (md:, max-md:, etc.)
+- Advanced dark mode using `dark:` prefixes and class-based strategy (`darkMode: 'class'`)
+- Custom `@custom-variant dark` definition for flexible theme targeting
+- Dynamic CSS custom properties (`--header-height`) for responsive behavior
+- Responsive design with Tailwind's breakpoint system and arbitrary values (min-[376px]:)
 - Anonymous Pro monospace font imported via Google Fonts and registered in `@theme`
 - Minimal black/white theme with red link underlines (#ff0000)
-- Icon dark mode handling: `dark:invert` CSS filter for monochrome icons
-- Global base styles in `@layer base` for anchor links and body styling
-- Inline utility classes for component-specific styling to avoid global conflicts
+- Icon dark mode handling: `dark:brightness-0 dark:invert` for monochrome icons
+- Global base styles in `@layer base` with CSS custom properties support
+- Dynamic header height calculation for scroll offset optimization
 
-### Dark Mode Implementation
-- **Toggle**: Sun icon in header with `invert` filter for dark theme
-- **Icons**: Skills and contact icons use `dark:brightness-0 dark:invert` to appear white on dark background
-- **Classes**: Applied to document.documentElement via JavaScript
-- **Storage**: Persisted preference in localStorage
+### Advanced Theme System
+- **Three Modes**: Light (☀️), Dark (🌙), System (💻) with emoji indicators
+- **Cycling Toggle**: Single button cycles through all three modes
+- **System Detection**: Real-time response to system `prefers-color-scheme` changes
+- **Storage**: Theme mode saved as 'themeMode' in localStorage (not 'darkTheme')
+- **Default Behavior**: Starts with system theme for familiar user experience
+- **Dynamic Application**: CSS classes applied to document.documentElement via JavaScript
 
 ## Development Guidelines
 
@@ -82,9 +88,10 @@ src/
 - Vitest 3.2.4 as test runner with jsdom environment
 - Test user interactions and accessibility features
 - Mock external dependencies when needed
-- Tests for routing, dark mode context, and component rendering
+- Tests for routing, three-position theme system, and component rendering
 - Test files located in `src/__tests__/` directory
-- Setup file: `src/setupTests.ts` configures Jest DOM matchers
+- Setup file: `src/setupTests.ts` configures Jest DOM matchers and browser API mocks
+- Global mocks for `matchMedia`, `scrollTo`, and DOM queries for consistent testing
 
 ## Common Tasks
 
@@ -106,11 +113,12 @@ Update `src/utils/data.ts` in the `skills` array:
 ```
 Note: Icons are imported PNG files, not emoji strings. For dark mode compatibility, monochrome icons work best with `dark:invert` filter.
 
-### Modifying Dark Mode
-- **Context**: Toggle logic in `src/context/DarkModeProvider.tsx`
-- **Styles**: Colors defined in Tailwind classes throughout components
-- **Storage**: Persisted in localStorage as `darkTheme` boolean
-- **Application**: Applied to `document.documentElement.classList` as 'dark' class
+### Modifying Theme System
+- **Context**: Three-position theme logic in `src/context/DarkModeProvider.tsx`
+- **Modes**: Light (☀️), Dark (🌙), System (💻) with emoji indicators in toggle button
+- **Storage**: Theme mode persisted in localStorage as 'themeMode' string ('light' | 'dark' | 'system')
+- **System Detection**: Real-time response to system preference changes via `matchMedia`
+- **Application**: CSS classes applied to `document.documentElement.classList` as 'dark' class
 - **Icons**: Use `dark:invert` for monochrome icons, or conditional logic for complex images
 
 ### Running Commands

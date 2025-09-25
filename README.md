@@ -6,10 +6,10 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 ## 🚀 Features
 
-- **Responsive Design**: Optimized for mobile, tablet, and desktop viewing
-- **Dark Mode Support**: Complete theme switching with icon adaptations and localStorage persistence
+- **Responsive Design**: Optimized for mobile, tablet, and desktop viewing with dynamic header height calculation
+- **Advanced Dark Mode**: Three-position theme system (Light/Dark/System) with emoji icons and automatic system detection
 - **Modern Tech Stack**: React 19, TypeScript, Tailwind CSS v4, and Vite
-- **Single Page Application**: Smooth navigation with React Router DOM
+- **Single Page Application**: Smooth navigation with React Router DOM and anchor scroll optimization
 - **Accessible**: ARIA labels, semantic HTML, and keyboard navigation
 - **Performance Optimized**: Fast loading with Vite build optimization
 - **Comprehensive Testing**: Full test suite with Vitest and React Testing Library
@@ -99,10 +99,11 @@ src/
 ├── pages/               # Route components
 │   ├── Home.tsx         # Main portfolio page
 │   └── Contact.tsx      # Contact page
-├── context/             # React Context providers
-│   ├── DarkModeContext.ts    # Dark mode context
-│   ├── DarkModeProvider.tsx  # Context provider
-│   └── useDarkMode.ts        # Custom hook
+├── context/             # React Context providers and hooks
+│   ├── DarkModeContext.ts    # Theme context definition with TypeScript types
+│   ├── DarkModeProvider.tsx  # Three-position theme provider with system detection
+│   ├── useDarkMode.ts        # Custom hook for theme state management
+│   └── index.ts              # Barrel exports for clean imports
 ├── assets/              # Static assets
 │   └── images/          # Images, logos, icons
 ├── utils/               # Utility functions and data
@@ -114,30 +115,65 @@ src/
 └── index.css            # Global styles and Tailwind imports
 ```
 
-## 🎨 Dark Mode Implementation
+## 🎨 Advanced Theme System
 
-The portfolio features a comprehensive dark mode system using Tailwind CSS v4:
+The portfolio features a comprehensive three-position theme system:
 
-- **Toggle**: Sun icon in header that inverts colors when dark mode is active
-- **Icon Adaptation**: Skills and contact icons use `dark:invert` CSS filter to appear white on dark background
-- **Persistence**: Theme preference saved in localStorage
-- **Implementation**: CSS class-based theming applied to document element with custom `@custom-variant dark` definition
-- **Modern Approach**: Uses Tailwind CSS v4 native integration with Vite and custom theme configuration in `src/index.css`
+### Theme Modes
+- **☀️ Light Mode**: Forced light theme regardless of system preferences
+- **🌙 Dark Mode**: Forced dark theme regardless of system preferences  
+- **💻 System Mode**: Automatically follows system `prefers-color-scheme` setting
 
-## 📱 Responsive Design
+### Features
+- **Cycling Toggle**: Single button cycles through all three modes
+- **Emoji Icons**: Visual indicators (☀️🌙💻) show current theme state
+- **System Detection**: Real-time response to system theme changes
+- **Persistence**: Theme preference saved in localStorage as `themeMode`
+- **Default**: Starts with system theme for familiar user experience
 
-Built with mobile-first approach using Tailwind CSS breakpoints:
-- **Mobile**: Optimized layout and navigation
-- **Tablet**: Intermediate layouts with proper spacing
-- **Desktop**: Full-featured layout with all elements visible
+### Technical Implementation
+- **Tailwind CSS v4**: Uses `dark:` prefixes with class-based strategy
+- **CSS Custom Properties**: Dynamic `--header-height` variable for responsive layout
+- **React Context**: Centralized theme state management
+- **Icon Adaptation**: Skills and contact icons use `dark:invert` for proper contrast
+
+## 📱 Responsive Design & Navigation
+
+Built with mobile-first approach and intelligent layout adaptation:
+
+### Breakpoint System
+- **Mobile**: Optimized layout with dynamic header height for wrapped navigation
+- **Tablet**: Intermediate layouts with proper spacing and touch-friendly elements
+- **Desktop**: Full-featured layout with single-row navigation
+
+### Smart Anchor Navigation
+- **Dynamic Offset**: Header height calculated in real-time for accurate scroll positioning
+- **Smooth Scrolling**: Custom JavaScript scroll with proper offset calculation
+- **CSS Fallback**: `scroll-margin-top` using CSS custom properties for direct anchor links
+- **Responsive Heights**: Automatic adjustment for wrapped header elements on mobile
+
+### Navigation Features
+- **Anchor Links**: Smooth scrolling to sections with header offset compensation
+- **Route Awareness**: Different navigation behavior for home vs other pages
+- **Touch Optimized**: Proper touch targets and spacing for mobile devices
 
 ## 🧪 Testing Strategy
 
-- **Component Testing**: All major components have comprehensive tests
-- **User Interaction Testing**: Tests for clicks, navigation, and form interactions
-- **Accessibility Testing**: Ensures proper ARIA labels and semantic HTML
-- **Dark Mode Testing**: Validates theme switching functionality
-- **Routing Testing**: Tests for proper navigation and URL handling
+Comprehensive test coverage for all major functionality:
+
+### Test Coverage
+- **Component Testing**: All major components with user interaction simulation
+- **Theme System Testing**: Three-position theme switching with localStorage persistence  
+- **Navigation Testing**: Anchor scrolling with dynamic header height calculation
+- **System Integration**: `matchMedia` API testing for system theme detection
+- **Accessibility Testing**: ARIA labels, semantic HTML, and keyboard navigation
+- **Routing Testing**: React Router navigation and URL handling
+
+### Testing Tools
+- **Vitest 3.2.4**: Fast unit testing with jsdom environment
+- **React Testing Library 16.3.0**: Component testing with user-centric queries
+- **Custom Mocks**: Window APIs (`matchMedia`, `scrollTo`, `localStorage`) for isolated testing
+- **Global Setup**: Centralized test configuration in `setupTests.ts`
 
 ## 🚀 Deployment
 
@@ -163,12 +199,13 @@ This project is configured for easy deployment to:
 
 ## 🔧 Configuration Files
 
-- `vite.config.ts` - Vite configuration with React plugin, Tailwind CSS, and testing setup
-- `src/index.css` - Tailwind CSS v4 configuration with custom theme and variants
-- `eslint.config.js` - ESLint rules and settings with TypeScript ESLint
-- `tsconfig.json` - TypeScript compiler configuration
-- `tsconfig.app.json` - Application-specific TypeScript configuration
+- `vite.config.ts` - Vite configuration with React plugin, Tailwind CSS v4 native integration, and Vitest testing setup
+- `src/index.css` - Tailwind CSS v4 configuration with custom theme, `@custom-variant dark`, and CSS custom properties
+- `eslint.config.js` - ESLint rules with TypeScript ESLint integration
+- `tsconfig.json` - TypeScript compiler configuration with strict settings
+- `tsconfig.app.json` - Application-specific TypeScript settings
 - `tsconfig.node.json` - Node.js-specific TypeScript configuration
+- `src/setupTests.ts` - Global test setup with mocks for browser APIs
 
 ## 👤 About Vladimir Borovikov
 
