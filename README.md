@@ -24,14 +24,17 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 ### Build & Development Tools
 - **Vite 7.1.7** - Fast build tool and dev server
-- **PostCSS** - CSS processing with Tailwind integration
+- **@vitejs/plugin-react 5.0.3** - React plugin for Vite
+- **@tailwindcss/vite 4.1.13** - Native Tailwind CSS integration for Vite
 - **ESLint 9.36.0** - Code linting with TypeScript support
+- **TypeScript ESLint 8.44.0** - ESLint rules for TypeScript
 
 ### Testing
 - **Vitest 3.2.4** - Fast unit testing framework
 - **React Testing Library 16.3.0** - Component testing utilities
-- **Jest DOM** - Additional DOM matchers
-- **jsdom** - DOM environment for testing
+- **@testing-library/jest-dom 6.8.0** - Additional DOM matchers
+- **@testing-library/user-event 14.6.1** - User interaction utilities
+- **jsdom 27.0.0** - DOM environment for testing
 
 ## 📦 Installation
 
@@ -113,12 +116,13 @@ src/
 
 ## 🎨 Dark Mode Implementation
 
-The portfolio features a comprehensive dark mode system:
+The portfolio features a comprehensive dark mode system using Tailwind CSS v4:
 
 - **Toggle**: Sun icon in header that inverts colors when dark mode is active
 - **Icon Adaptation**: Skills and contact icons use `dark:invert` CSS filter to appear white on dark background
 - **Persistence**: Theme preference saved in localStorage
-- **Implementation**: CSS class-based theming applied to document element
+- **Implementation**: CSS class-based theming applied to document element with custom `@custom-variant dark` definition
+- **Modern Approach**: Uses Tailwind CSS v4 native integration with Vite and custom theme configuration in `src/index.css`
 
 ## 📱 Responsive Design
 
@@ -159,11 +163,12 @@ This project is configured for easy deployment to:
 
 ## 🔧 Configuration Files
 
-- `vite.config.ts` - Vite configuration with React plugin and testing setup
-- `tailwind.config.js` - Tailwind CSS configuration with custom theme
+- `vite.config.ts` - Vite configuration with React plugin, Tailwind CSS, and testing setup
+- `src/index.css` - Tailwind CSS v4 configuration with custom theme and variants
+- `eslint.config.js` - ESLint rules and settings with TypeScript ESLint
 - `tsconfig.json` - TypeScript compiler configuration
-- `eslint.config.js` - ESLint rules and settings
-- `postcss.config.js` - PostCSS configuration for Tailwind
+- `tsconfig.app.json` - Application-specific TypeScript configuration
+- `tsconfig.node.json` - Node.js-specific TypeScript configuration
 
 ## 👤 About Vladimir Borovikov
 
