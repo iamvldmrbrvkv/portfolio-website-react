@@ -1,6 +1,6 @@
 # Vladimir Borovikov - Portfolio Website (React)
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS, showcasing Vladimir Borovikov's skills as a full-stack engineering student and his journey from musician to software engineer.
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS, showcasing Vladimir Borovikov's skills as a frontend engineer and his journey from musician to software engineer.
 
 ![Portfolio Screenshot](https://img.shields.io/badge/React-19.1.1-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.13-blue) ![Vite](https://img.shields.io/badge/Vite-7.1.7-purple) ![Tests](https://img.shields.io/badge/Tests-Vitest-green)
 
@@ -172,7 +172,9 @@ This project is configured for easy deployment to:
 
 ## 👤 About Vladimir Borovikov
 
-Full-stack engineering student at Codecademy with a background in music and art. This portfolio showcases the transition from creative arts to software engineering, featuring projects that demonstrate growth in web development technologies.
+Frontend engineer with a background in music and art. Previously worked as a musician and art worker before deciding to become a software engineer. This portfolio showcases the transition from creative arts to software engineering, featuring projects that demonstrate growth in web development technologies.
+
+In his spare time, Vladimir enjoys walking in nature, playing video games, and watching coding dreams when sleeping.
 
 **Skills Featured:**
 - Frontend: HTML5, CSS3, JavaScript, TypeScript, React, Redux
