@@ -7,7 +7,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full z-1 bg-white dark:bg-[rgb(32,33,36)] flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between [@media(max-width:768px)]:justify-center">
+    <header className="fixed top-0 left-0 right-0 w-full z-1 bg-white dark:bg-[rgb(32,33,36)] flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between max-md:justify-center">
       <Link 
         to="/" 
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -15,7 +15,7 @@ const Header = () => {
       >
         <h1 className="text-[32px]">Vladimir Borovikov</h1>
       </Link>
-      <nav className="mx-[30px] [@media(max-width:768px)]:mx-auto">
+      <nav className="mr-[30px] max-md:mx-auto">
         <div className="flex justify-around items-center flex-wrap">
           <ul className="list-none flex gap-x-[9px]">
             <li>

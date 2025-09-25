@@ -11,7 +11,7 @@ function App() {
       <Router basename="/portfolio-website-react/">
         <div className="min-h-screen bg-white dark:bg-[rgb(32,33,36)] text-black dark:text-gray-100">
           <Header />
-          <div className="pt-[113px] [@media(min-width:376px)]:pt-[81px] [@media(min-width:426px)]:pt-[54px] [@media(min-width:769px)]:pt-[53px]">
+          <div className="pt-[143px] min-[425px]:pt-[95px] min-[768px]:pt-[70px]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/contact" element={<ContactPage />} />
