@@ -207,22 +207,10 @@ This project is configured for easy deployment to:
 - `tsconfig.node.json` - Node.js-specific TypeScript configuration
 - `src/setupTests.ts` - Global test setup with mocks for browser APIs
 
-## 👤 About Vladimir Borovikov
-
-Frontend engineer with a background in music and art. Previously worked as a musician and art worker before deciding to become a software engineer. This portfolio showcases the transition from creative arts to software engineering, featuring projects that demonstrate growth in web development technologies.
-
-In his spare time, Vladimir enjoys walking in nature, playing video games, and watching coding dreams when sleeping.
-
-**Skills Featured:**
-- Frontend: HTML5, CSS3, JavaScript, TypeScript, React, Redux
-- Tools: Git, Terminal, Node.js
-- Learning: Full-stack development principles and modern web technologies
-
-## 📞 Contact
+## 🔗 Contact
 
 - **GitHub**: [iamvldmrbrvkv](https://github.com/iamvldmrbrvkv)
 - **LinkedIn**: [Vladimir Borovikov](https://linkedin.com/in/iamvldmrbrvkv)
-- **Email**: Available through contact form
 
 ## 📄 License
 
