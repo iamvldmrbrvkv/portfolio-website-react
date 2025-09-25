@@ -86,6 +86,16 @@ describe('Header', () => {
     });
   });
 
+  it('updates URL with anchor after smooth scroll', () => {
+    const pushStateSpy = vi.spyOn(window.history, 'pushState');
+    renderHeader(['/']);
+    
+    const aboutLink = screen.getByText('About Me');
+    fireEvent.click(aboutLink);
+    
+    expect(pushStateSpy).toHaveBeenCalledWith(null, '', '#about-me');
+  });
+
   it('prevents default anchor behavior and uses custom scroll', () => {
     renderHeader(['/']);
     

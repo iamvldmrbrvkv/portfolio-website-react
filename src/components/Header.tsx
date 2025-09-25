@@ -40,6 +40,8 @@ const Header = () => {
         top: elementPosition,
         behavior: 'smooth'
       });
+      
+      window.history.pushState(null, '', `#${sectionId}`);
     }
   };
 
