@@ -6,7 +6,7 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 ## Tech Stack
 - **Framework**: React 19.1.1 with TypeScript 5.8.3
 - **Build Tool**: Vite 7.1.7
-- **Styling**: Tailwind CSS v4.1.13 with PostCSS
+- **Styling**: Tailwind CSS v4.1.13 with native Vite integration
 - **Testing**: Vitest 3.2.4 + React Testing Library 16.3.0 + Jest DOM
 - **Routing**: React Router DOM 7.9.1
 - **Dark Mode**: React Context with localStorage persistence and CSS class-based theming
@@ -31,13 +31,14 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 - No external state management library needed
 
 ### Styling Approach
-- Tailwind CSS utility classes with PostCSS processing
+- Tailwind CSS utility classes with native Vite integration using v4.1.13 syntax
 - Dark mode using `dark:` prefixes and class-based strategy (`darkMode: 'class'`)
 - Responsive design with Tailwind's breakpoint system (md:, max-md:, etc.)
-- Anonymous Pro monospace font throughout
-- Black/white theme with red accent color (#ff0000)
+- Anonymous Pro monospace font imported via Google Fonts and registered in `@theme`
+- Minimal black/white theme with red link underlines (#ff0000)
 - Icon dark mode handling: `dark:invert` CSS filter for monochrome icons
-- Custom CSS for link states and header title styling in `index.css`
+- Global base styles in `@layer base` for anchor links and body styling
+- Inline utility classes for component-specific styling to avoid global conflicts
 
 ### Dark Mode Implementation
 - **Toggle**: Sun icon in header with `invert` filter for dark theme
@@ -117,6 +118,7 @@ Note: Icons are imported PNG files, not emoji strings. For dark mode compatibili
 npm install         # Install dependencies
 npm run dev         # Start development server (Vite)
 npm run build       # Build for production (TypeScript + Vite)
+npm run postbuild   # Create 404.html fallback (runs automatically after build)
 npm run preview     # Preview production build locally
 npm run test        # Run tests in watch mode (Vitest)
 npm run test:run    # Run tests once
@@ -134,6 +136,7 @@ npm run lint        # Lint code (ESLint)
 
 ## Current Project Features
 - **Routing**: BrowserRouter with GitHub Pages support and smooth anchor navigation
+- **SPA Fallback**: 404.html created automatically for deep link support on GitHub Pages
 - **Dark Mode**: Complete theme switching with icon adaptations
 - **Responsive Design**: Mobile-optimized with Tailwind breakpoints
 - **Performance**: Fast builds with Vite and optimized asset handling
@@ -144,10 +147,12 @@ npm run lint        # Lint code (ESLint)
 ## Deployment Notes
 - Static site suitable for GitHub Pages, Netlify, Vercel, or any static hosting
 - Build output in `dist/` directory after `npm run build`
+- `postbuild` script automatically creates `404.html` from `index.html` for SPA routing
+- GitHub Actions workflow in `.github/workflows/deploy.yml` handles auto-deployment
 - Images are optimized and bundled by Vite with content hashing
 - All external links open in new tabs for better UX
 - Dark mode preference persists across sessions
-- BrowserRouter with basename for GitHub Pages compatibility
+- BrowserRouter with basename="/portfolio-website-react/" for GitHub Pages compatibility
 
 ## Maintenance
 - Keep dependencies updated regularly (especially React, Vite, Tailwind)
@@ -170,3 +175,13 @@ npm run lint        # Lint code (ESLint)
 ### Header Link Styling
 - **Problem**: Header title link inherits global link styles (colors, underlines)
 - **Solution**: Use specific CSS selector `header a.header-title` with all states to override global styles
+
+### GitHub Pages 404 Issues
+- **Problem**: Direct access to `/contact` returns 404 on GitHub Pages
+- **Solution**: Automatically generated `404.html` fallback redirects to React Router (implemented via `postbuild` script)
+
+### Tailwind v4 Syntax
+- **@layer**: Use `@layer base` for global styles, `@layer components` for reusable classes
+- **@apply**: Compile-time directive to inline utilities into custom CSS
+- **@theme**: Register custom design tokens (fonts, colors, spacing) at the top of CSS
+- **Custom variants**: Use `@custom-variant` for special state selectors
