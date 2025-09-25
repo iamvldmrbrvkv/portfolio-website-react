@@ -1,8 +1,11 @@
 import { createContext } from 'react';
 
+export type ThemeMode = 'light' | 'dark' | 'system';
+
 export interface DarkModeContextType {
   isDark: boolean;
-  toggleDarkMode: () => void;
+  themeMode: ThemeMode;
+  toggleThemeMode: () => void;
 }
 
 export const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);

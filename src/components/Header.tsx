@@ -1,10 +1,62 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useDarkMode } from '../context';
-import darkModeIcon from '../assets/images/dark_mode_button_sun.png';
+import { useEffect } from 'react';
 
 const Header = () => {
-  const { isDark, toggleDarkMode } = useDarkMode();
+  const { isDark, themeMode, toggleThemeMode } = useDarkMode();
   const location = useLocation();
+
+  const updateHeaderHeight = () => {
+    const header = document.querySelector('header');
+    if (header) {
+      const height = header.offsetHeight;
+      document.documentElement.style.setProperty('--header-height', `${height + 10}px`);
+    }
+  };
+
+  useEffect(() => {
+    updateHeaderHeight();
+    
+    const handleResize = () => updateHeaderHeight();
+    window.addEventListener('resize', handleResize);
+    
+    const timeout = setTimeout(updateHeaderHeight, 100);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeout);
+    };
+  }, [themeMode]);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    const header = document.querySelector('header');
+    
+    if (element && header) {
+      const headerHeight = header.offsetHeight;
+      const elementPosition = element.offsetTop - headerHeight - 10;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const getThemeIcon = () => {
+    switch (themeMode) {
+      case 'light':
+        return { icon: '☀️', label: 'Light theme (click for dark)' };
+      case 'dark': 
+        return { icon: '🌙', label: 'Dark theme (click for system)' };
+      case 'system':
+        return { icon: '💻', label: `System theme: ${isDark ? 'dark' : 'light'} (click for light)` };
+      default:
+        return { icon: '☀️', label: 'Light theme' };
+    }
+  };
+
+  const { icon, label } = getThemeIcon();
 
   return (
     <header className="fixed top-0 left-0 right-0 w-full z-1 bg-white dark:bg-[rgb(32,33,36)] flex justify-between items-center border-t border-b border-black dark:border-white p-[10px] flex-wrap md:justify-between max-md:justify-center">
@@ -22,10 +74,9 @@ const Header = () => {
               {location.pathname === '/' ? (
                 <a 
                   href="#about-me"
-                  onClick={() => {
-                    setTimeout(() => {
-                      document.getElementById('about-me')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 0);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('about-me');
                   }}
                 >
                   About Me
@@ -42,10 +93,9 @@ const Header = () => {
               {location.pathname === '/' ? (
                 <a 
                   href="#projects"
-                  onClick={() => {
-                    setTimeout(() => {
-                      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 0);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('projects');
                   }}
                 >
                   Projects
@@ -58,14 +108,13 @@ const Header = () => {
                 </Link>
               )}
             </li>
-            <li>
+                        <li>
               {location.pathname === '/' ? (
                 <a 
                   href="#skills"
-                  onClick={() => {
-                    setTimeout(() => {
-                      document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 0);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('skills');
                   }}
                 >
                   Skills
@@ -87,15 +136,12 @@ const Header = () => {
             </li>
           </ul>
           <button 
-            onClick={toggleDarkMode}
-            className="ml-[10px] border-none bg-transparent cursor-pointer"
-            aria-label="Toggle dark mode"
+            onClick={toggleThemeMode}
+            className="ml-[10px] border-none bg-transparent cursor-pointer text-[25px] leading-none"
+            aria-label={label}
+            title={label}
           >
-            <img 
-              src={darkModeIcon} 
-              alt="Dark mode toggle" 
-              className={`h-[25px] ${isDark ? 'invert' : ''}`}
-            />
+            {icon}
           </button>
         </div>
       </nav>

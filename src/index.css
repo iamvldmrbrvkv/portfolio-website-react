@@ -8,6 +8,14 @@
 }
 
 @layer base {
+  :root {
+    --header-height: 80px;
+  }
+  
+  section[id] {
+    scroll-margin-top: var(--header-height);
+  }
+  
   a {
     @apply text-black underline decoration-[#ff0000]
            visited:text-[#ff0000] visited:decoration-black
