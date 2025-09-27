@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import About from '../components/About';
-import Projects from '../components/Projects';
-import Skills from '../components/Skills';
+import { useEffect } from "react";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import Skills from "../components/Skills";
 
 const Home = () => {
   useEffect(() => {
@@ -10,7 +10,7 @@ const Home = () => {
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     }

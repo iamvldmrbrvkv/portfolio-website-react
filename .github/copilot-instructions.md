@@ -1,9 +1,11 @@
 # Copilot Instructions for Portfolio Website (React)
 
 ## Project Overview
+
 This is a modern React TypeScript portfolio website for Vladimir Borovikov, migrated from an original HTML/CSS/JS portfolio to use Vite, React, Tailwind CSS, and Vitest for testing. The project showcases Vladimir's skills, projects, and contact information with a clean, minimal design and dark mode support.
 
 ## Tech Stack
+
 - **Framework**: React 19.1.1 with TypeScript 5.8.3
 - **Build Tool**: Vite 7.1.7
 - **Styling**: Tailwind CSS v4.1.13 with native Vite integration
@@ -15,6 +17,7 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 ## Architecture Patterns
 
 ### Component Structure
+
 - **Header**: Navigation with smooth scrolling anchor links, BrowserRouter navigation, clickable logo, and dark mode toggle
 - **About**: Personal introduction with profile image (Memoji style)
 - **Projects**: Portfolio showcase with external links to live sites and GitHub repositories
@@ -24,6 +27,7 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 - **Pages**: Home (main portfolio) and Contact (dedicated contact page)
 
 ### State Management
+
 - Advanced theme system managed via React Context (`DarkModeContext` and `DarkModeProvider`)
 - Three-position theme mode: 'light' | 'dark' | 'system' (default: 'system')
 - Theme mode persisted in localStorage as 'themeMode' string
@@ -33,6 +37,7 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 - No external state management library needed
 
 ### Styling Approach
+
 - Tailwind CSS utility classes with native Vite integration using v4.1.13 syntax
 - Advanced dark mode using `dark:` prefixes and class-based strategy (`darkMode: 'class'`)
 - Custom `@custom-variant dark` definition for flexible theme targeting
@@ -45,6 +50,7 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 - Dynamic header height calculation for scroll offset optimization
 
 ### Advanced Theme System
+
 - **Three Modes**: Light (☀️), Dark (🌙), System (💻) with emoji indicators
 - **Cycling Toggle**: Single button cycles through all three modes
 - **System Detection**: Real-time response to system `prefers-color-scheme` changes
@@ -55,6 +61,7 @@ This is a modern React TypeScript portfolio website for Vladimir Borovikov, migr
 ## Development Guidelines
 
 ### File Organization
+
 ```
 src/
 ├── components/          # React components (Header, About, Projects, Skills, Contact, Footer)
@@ -76,6 +83,7 @@ src/
 ```
 
 ### Code Standards
+
 - Use TypeScript with strict type checking
 - Functional components with React hooks
 - Proper semantic HTML and accessibility attributes
@@ -84,6 +92,7 @@ src/
 - Consistent naming conventions (camelCase for variables, PascalCase for components)
 
 ### Testing Approach
+
 - Component testing with React Testing Library 16.3.0
 - Vitest 3.2.4 as test runner with jsdom environment
 - Test user interactions and accessibility features
@@ -96,7 +105,9 @@ src/
 ## Common Tasks
 
 ### Adding New Projects
+
 Update `src/utils/data.ts` in the `projects` array:
+
 ```typescript
 {
   title: "Project Name",
@@ -107,13 +118,17 @@ Update `src/utils/data.ts` in the `projects` array:
 ```
 
 ### Adding New Skills
+
 Update `src/utils/data.ts` in the `skills` array:
+
 ```typescript
 { name: "Skill Name", icon: skillIcon, alt: "Skill Name" }
 ```
+
 Note: Icons are imported PNG files, not emoji strings. For dark mode compatibility, monochrome icons work best with `dark:invert` filter.
 
 ### Modifying Theme System
+
 - **Context**: Three-position theme logic in `src/context/DarkModeProvider.tsx`
 - **Modes**: Light (☀️), Dark (🌙), System (💻) with emoji indicators in toggle button
 - **Storage**: Theme mode persisted in localStorage as 'themeMode' string ('light' | 'dark' | 'system')
@@ -122,6 +137,7 @@ Note: Icons are imported PNG files, not emoji strings. For dark mode compatibili
 - **Icons**: Use `dark:invert` for monochrome icons, or conditional logic for complex images
 
 ### Running Commands
+
 ```bash
 npm install         # Install dependencies
 npm run dev         # Start development server (Vite)
@@ -135,6 +151,7 @@ npm run lint        # Lint code (ESLint)
 ```
 
 ## Design Principles
+
 - **Minimal and Clean**: Following the original design's simplicity with modern React patterns
 - **Typography-focused**: Anonymous Pro monospace font creates distinctive character
 - **Performance**: Optimized with Vite build tool and modern React 19 features
@@ -143,6 +160,7 @@ npm run lint        # Lint code (ESLint)
 - **Dark Mode First**: Comprehensive dark mode support with icon inversion and theme persistence
 
 ## Current Project Features
+
 - **Routing**: BrowserRouter with GitHub Pages support and smooth anchor navigation
 - **SPA Fallback**: 404.html created automatically for deep link support on GitHub Pages
 - **Dark Mode**: Complete theme switching with icon adaptations
@@ -153,6 +171,7 @@ npm run lint        # Lint code (ESLint)
 - **Clickable Logo**: Header title links to home page with custom styling
 
 ## Deployment Notes
+
 - Static site suitable for GitHub Pages, Netlify, Vercel, or any static hosting
 - Build output in `dist/` directory after `npm run build`
 - `postbuild` script automatically creates `404.html` from `index.html` for SPA routing
@@ -163,6 +182,7 @@ npm run lint        # Lint code (ESLint)
 - BrowserRouter with basename="/portfolio-website-react/" for GitHub Pages compatibility
 
 ## Maintenance
+
 - Keep dependencies updated regularly (especially React, Vite, Tailwind)
 - Monitor bundle size with `npm run build` output
 - Add tests for new components following existing patterns
@@ -173,22 +193,27 @@ npm run lint        # Lint code (ESLint)
 ## Common Issues & Solutions
 
 ### Dark Mode Icons
+
 - **Problem**: Icons appear dark in dark mode
 - **Solution**: Add `dark:invert` class to monochrome icons, or use conditional logic for complex images
 
-### Mobile Responsiveness  
+### Mobile Responsiveness
+
 - **Current**: Uses Tailwind's standard breakpoints (md:, max-md:, etc.)
 - **Alternative**: Custom breakpoints can be added to `tailwind.config.js` if needed
 
 ### Header Link Styling
+
 - **Problem**: Header title link inherits global link styles (colors, underlines)
 - **Solution**: Use specific CSS selector `header a.header-title` with all states to override global styles
 
 ### GitHub Pages 404 Issues
+
 - **Problem**: Direct access to `/contact` returns 404 on GitHub Pages
 - **Solution**: Automatically generated `404.html` fallback redirects to React Router (implemented via `postbuild` script)
 
 ### Tailwind v4 Syntax
+
 - **@layer**: Use `@layer base` for global styles, `@layer components` for reusable classes
 - **@apply**: Compile-time directive to inline utilities into custom CSS
 - **@theme**: Register custom design tokens (fonts, colors, spacing) at the top of CSS

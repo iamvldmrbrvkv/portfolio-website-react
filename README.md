@@ -17,12 +17,14 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 ## 🛠️ Technologies Used
 
 ### Frontend
+
 - **React 19.1.1** - Modern React with latest features
 - **TypeScript 5.8.3** - Type-safe JavaScript
 - **Tailwind CSS 4.1.13** - Utility-first CSS framework
 - **React Router DOM 7.9.1** - Client-side routing
 
 ### Build & Development Tools
+
 - **Vite 7.1.7** - Fast build tool and dev server
 - **@vitejs/plugin-react 5.0.3** - React plugin for Vite
 - **@tailwindcss/vite 4.1.13** - Native Tailwind CSS integration for Vite
@@ -30,6 +32,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **TypeScript ESLint 8.44.0** - ESLint rules for TypeScript
 
 ### Testing
+
 - **Vitest 3.2.4** - Fast unit testing framework
 - **React Testing Library 16.3.0** - Component testing utilities
 - **@testing-library/jest-dom 6.8.0** - Additional DOM matchers
@@ -52,13 +55,16 @@ npm install
 ## 🏃‍♂️ Running the Project
 
 ### Development
+
 ```bash
 # Start development server with hot reload
 npm run dev
 ```
+
 The application will be available at `http://localhost:5173`
 
 ### Production Build
+
 ```bash
 # Build for production
 npm run build
@@ -68,6 +74,7 @@ npm run preview
 ```
 
 ### Testing
+
 ```bash
 # Run tests in watch mode
 npm run test
@@ -80,6 +87,7 @@ npm run test:ui
 ```
 
 ### Linting
+
 ```bash
 # Lint code with ESLint
 npm run lint
@@ -120,11 +128,13 @@ src/
 The portfolio features a comprehensive three-position theme system:
 
 ### Theme Modes
+
 - **☀️ Light Mode**: Forced light theme regardless of system preferences
-- **🌙 Dark Mode**: Forced dark theme regardless of system preferences  
+- **🌙 Dark Mode**: Forced dark theme regardless of system preferences
 - **💻 System Mode**: Automatically follows system `prefers-color-scheme` setting
 
 ### Features
+
 - **Cycling Toggle**: Single button cycles through all three modes
 - **Emoji Icons**: Visual indicators (☀️🌙💻) show current theme state
 - **System Detection**: Real-time response to system theme changes
@@ -132,6 +142,7 @@ The portfolio features a comprehensive three-position theme system:
 - **Default**: Starts with system theme for familiar user experience
 
 ### Technical Implementation
+
 - **Tailwind CSS v4**: Uses `dark:` prefixes with class-based strategy
 - **CSS Custom Properties**: Dynamic `--header-height` variable for responsive layout
 - **React Context**: Centralized theme state management
@@ -142,17 +153,20 @@ The portfolio features a comprehensive three-position theme system:
 Built with mobile-first approach and intelligent layout adaptation:
 
 ### Breakpoint System
+
 - **Mobile**: Optimized layout with dynamic header height for wrapped navigation
 - **Tablet**: Intermediate layouts with proper spacing and touch-friendly elements
 - **Desktop**: Full-featured layout with single-row navigation
 
 ### Smart Anchor Navigation
+
 - **Dynamic Offset**: Header height calculated in real-time for accurate scroll positioning
 - **Smooth Scrolling**: Custom JavaScript scroll with proper offset calculation
 - **CSS Fallback**: `scroll-margin-top` using CSS custom properties for direct anchor links
 - **Responsive Heights**: Automatic adjustment for wrapped header elements on mobile
 
 ### Navigation Features
+
 - **Anchor Links**: Smooth scrolling to sections with header offset compensation
 - **Route Awareness**: Different navigation behavior for home vs other pages
 - **Touch Optimized**: Proper touch targets and spacing for mobile devices
@@ -162,14 +176,16 @@ Built with mobile-first approach and intelligent layout adaptation:
 Comprehensive test coverage for all major functionality:
 
 ### Test Coverage
+
 - **Component Testing**: All major components with user interaction simulation
-- **Theme System Testing**: Three-position theme switching with localStorage persistence  
+- **Theme System Testing**: Three-position theme switching with localStorage persistence
 - **Navigation Testing**: Anchor scrolling with dynamic header height calculation
 - **System Integration**: `matchMedia` API testing for system theme detection
 - **Accessibility Testing**: ARIA labels, semantic HTML, and keyboard navigation
 - **Routing Testing**: React Router navigation and URL handling
 
 ### Testing Tools
+
 - **Vitest 3.2.4**: Fast unit testing with jsdom environment
 - **React Testing Library 16.3.0**: Component testing with user-centric queries
 - **Custom Mocks**: Window APIs (`matchMedia`, `scrollTo`, `localStorage`) for isolated testing
@@ -185,6 +201,7 @@ This project is configured for easy deployment to:
 - **Any Static Host**: Standard HTML/CSS/JS output
 
 ### Build Output
+
 - Production files are generated in the `dist/` directory
 - Assets are optimized and cache-busted with content hashing
 - Images are processed and optimized by Vite
@@ -218,4 +235,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-*Built with ❤️ using React, TypeScript, and Tailwind CSS*
+_Built with ❤️ using React, TypeScript, and Tailwind CSS_

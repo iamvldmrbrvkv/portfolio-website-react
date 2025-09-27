@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="text-center border-b border-black dark:border-white">
-      <p className="my-[10px] mx-[50px]">
+    <footer className="border-b border-black text-center dark:border-white">
+      <p className="mx-[50px] my-[10px]">
         From Russia with <span>♥</span>
       </p>
     </footer>

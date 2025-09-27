@@ -1,6 +1,6 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
-export type ThemeMode = 'light' | 'dark' | 'system';
+export type ThemeMode = "light" | "dark" | "system";
 
 export interface DarkModeContextType {
   isDark: boolean;
@@ -8,4 +8,6 @@ export interface DarkModeContextType {
   toggleThemeMode: () => void;
 }
 
-export const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);
+export const DarkModeContext = createContext<DarkModeContextType | undefined>(
+  undefined,
+);

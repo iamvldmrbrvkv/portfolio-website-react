@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -11,17 +11,12 @@
   :root {
     --header-height: 80px;
   }
-  
+
   section[id] {
     scroll-margin-top: var(--header-height);
   }
-  
+
   a {
-    @apply text-black underline decoration-[#ff0000]
-           visited:text-[#ff0000] visited:decoration-black
-           hover:no-underline
-           dark:text-white dark:decoration-[#ff0000]
-           dark:visited:text-[#809fff] dark:visited:decoration-white
-           dark:hover:no-underline;
+    @apply text-black underline decoration-[#ff0000] visited:text-[#ff0000] visited:decoration-black hover:no-underline dark:text-white dark:decoration-[#ff0000] dark:visited:text-[#809fff] dark:visited:decoration-white dark:hover:no-underline;
   }
 }

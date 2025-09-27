@@ -1,9 +1,9 @@
-import '@testing-library/jest-dom';
-import { vi } from 'vitest';
+import "@testing-library/jest-dom";
+import { vi } from "vitest";
 
-Object.defineProperty(window, 'matchMedia', {
+Object.defineProperty(window, "matchMedia", {
   writable: true,
-  value: vi.fn().mockImplementation(query => ({
+  value: vi.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,
@@ -15,14 +15,14 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
-Object.defineProperty(window, 'scrollTo', {
+Object.defineProperty(window, "scrollTo", {
   value: vi.fn(),
   writable: true,
 });
 
 const originalQuerySelector = document.querySelector;
 document.querySelector = vi.fn().mockImplementation((selector) => {
-  if (selector === 'header') {
+  if (selector === "header") {
     return { offsetHeight: 70 };
   }
   return originalQuerySelector.call(document, selector);
@@ -30,7 +30,7 @@ document.querySelector = vi.fn().mockImplementation((selector) => {
 
 const originalGetElementById = document.getElementById;
 document.getElementById = vi.fn().mockImplementation((id) => {
-  if (id === 'about-me' || id === 'projects' || id === 'skills') {
+  if (id === "about-me" || id === "projects" || id === "skills") {
     return { offsetTop: 500 };
   }
   return originalGetElementById.call(document, id);
