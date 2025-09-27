@@ -155,28 +155,33 @@ npm run lint        # Lint code (ESLint)
 For performance analysis and live site testing, use **MCP Chrome DevTools** integration:
 
 #### Performance Testing
+
 - Use `mcp_chrome-devtoo_new_page` to open the live site
 - Run `mcp_chrome-devtoo_performance_start_trace` with `autoStop: true` and `reload: true` for comprehensive analysis
 - Analyze specific insights with `mcp_chrome-devtoo_performance_analyze_insight` for detailed recommendations
 - Key metrics to monitor: LCP (<2.5s), CLS (<0.1), TTFB, render-blocking resources
 
 #### Site Navigation Testing
+
 - Use `mcp_chrome-devtoo_take_snapshot` to get page structure and element UIDs
 - Test navigation with `mcp_chrome-devtoo_click` on specific elements
 - Verify routing behavior between pages (Home `/` and Contact `/contact`)
 - Test dark mode toggle functionality and theme persistence
 
 #### Visual Validation
+
 - Use `mcp_chrome-devtoo_take_screenshot` with `fullPage: true` for complete page captures
 - Verify responsive design across different viewport sizes with `mcp_chrome-devtoo_resize_page`
 - Test both light and dark themes visually
 
 #### Network & Resource Analysis
+
 - Monitor network requests with `mcp_chrome-devtoo_list_network_requests`
 - Check caching behavior and resource optimization
 - Verify HTTP/2 usage and compression effectiveness
 
 **Live Site URLs:**
+
 - Production: `https://iamvldmrbrvkv.github.io/portfolio-website-react/`
 - Local development: `http://localhost:5173` (when running `npm run dev`)
 
