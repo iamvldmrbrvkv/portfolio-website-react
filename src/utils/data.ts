@@ -31,7 +31,7 @@ export const projects: Project[] = [
   {
     title: "Reddit Client",
     description:
-      "The app for Reddit using everything I've learned in Front-End, including React and Redux. I used minimal CSS styling, because wanted to create the old fashioned atmosphere, when only HTML was available. Reddit is a website where people share links to articles, media and other things on the web. The Reddit API provides data which I integrated into my application. The application allow users to view and search posts and comments provided by the API.",
+      "Reddit client application built with React and Redux, featuring a modern Material-UI interface with Reddit-inspired design. The app uses the official Reddit OAuth API via secure Netlify serverless functions. Users can search, view, and read posts and comments from Reddit with a responsive, card-based layout that includes dark/light mode support and voting interface.",
     link: "https://reddit-client-by-vladimir-borovikov.netlify.app/",
     github: "https://github.com/iamvldmrbrvkv/reddit-client",
   },
