@@ -13,6 +13,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Vladimir Borovikov - Portfolio</title>
+    
+    <!-- Prevent FOUC: Apply theme before page renders -->
+    <script>
+      document.documentElement.classList.toggle(
+        "dark",
+        localStorage.theme === "dark" ||
+          (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+    </script>
   </head>
   <body
     class="font-anonymous-pro bg-white text-black dark:bg-[rgb(32,33,36)] dark:text-[#eee]"

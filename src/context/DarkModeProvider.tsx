@@ -8,60 +8,58 @@ interface DarkModeProviderProps {
 
 export const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
   const [themeMode, setThemeMode] = useState<ThemeMode>(() => {
-    const saved = localStorage.getItem("themeMode") as ThemeMode;
-    return saved || "system";
+    const saved = localStorage.getItem("theme");
+    if (saved === "light") return "light";
+    if (saved === "dark") return "dark";
+    return "system";
   });
 
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    return (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
+  });
 
-  const getSystemTheme = (): boolean => {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  };
+  const applyTheme = () => {
+    const shouldBeDark =
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-  const applyTheme = (dark: boolean) => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", shouldBeDark);
+    setIsDark(shouldBeDark);
   };
 
   useEffect(() => {
-    let newIsDark: boolean;
-
     switch (themeMode) {
       case "light":
-        newIsDark = false;
+        localStorage.theme = "light";
         break;
       case "dark":
-        newIsDark = true;
+        localStorage.theme = "dark";
         break;
       case "system":
-        newIsDark = getSystemTheme();
+        localStorage.removeItem("theme");
         break;
-      default:
-        newIsDark = false;
     }
 
-    setIsDark(newIsDark);
-    applyTheme(newIsDark);
-    localStorage.setItem("themeMode", themeMode);
+    applyTheme();
   }, [themeMode]);
 
   useEffect(() => {
-    if (themeMode === "system") {
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-      const handleChange = () => {
-        const systemDark = getSystemTheme();
-        setIsDark(systemDark);
-        applyTheme(systemDark);
-      };
+    const handleChange = () => {
+      if (!("theme" in localStorage)) {
+        applyTheme();
+      }
+    };
 
-      mediaQuery.addEventListener("change", handleChange);
-      return () => mediaQuery.removeEventListener("change", handleChange);
-    }
-  }, [themeMode]);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   const toggleThemeMode = () => {
     setThemeMode((current) => {
