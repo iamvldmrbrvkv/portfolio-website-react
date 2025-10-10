@@ -5,13 +5,10 @@
 
 @theme {
   --font-anonymous-pro: "Anonymous Pro", monospace;
+  --header-height: 80px;
 }
 
 @layer base {
-  :root {
-    --header-height: 80px;
-  }
-
   section[id] {
     scroll-margin-top: var(--header-height);
   }

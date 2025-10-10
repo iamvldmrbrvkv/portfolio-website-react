@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useDarkMode } from "../context";
 import { useEffect } from "react";
 
+const SCROLL_OFFSET = 10;
+
 const Header = () => {
   const { isDark, themeMode, toggleThemeMode } = useDarkMode();
   const location = useLocation();
@@ -12,7 +14,7 @@ const Header = () => {
       const height = header.offsetHeight;
       document.documentElement.style.setProperty(
         "--header-height",
-        `${height + 10}px`,
+        `${height + SCROLL_OFFSET}px`,
       );
     }
   };
@@ -37,7 +39,7 @@ const Header = () => {
 
     if (element && header) {
       const headerHeight = header.offsetHeight;
-      const elementPosition = element.offsetTop - headerHeight - 10;
+      const elementPosition = element.offsetTop - headerHeight - SCROLL_OFFSET;
 
       window.scrollTo({
         top: elementPosition,
