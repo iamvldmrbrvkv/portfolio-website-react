@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useDarkMode } from "../context";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 const SCROLL_OFFSET = 10;
 
@@ -19,35 +19,32 @@ const Header = () => {
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     updateHeaderHeight();
 
     const handleResize = () => updateHeaderHeight();
     window.addEventListener("resize", handleResize);
 
-    const timeout = setTimeout(updateHeaderHeight, 100);
-
     return () => {
       window.removeEventListener("resize", handleResize);
-      clearTimeout(timeout);
     };
-  }, [themeMode]);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     const header = document.querySelector("header");
 
-    if (element && header) {
-      const headerHeight = header.offsetHeight;
-      const elementPosition = element.offsetTop - headerHeight - SCROLL_OFFSET;
+    if (!element || !header) return;
 
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth",
-      });
+    const headerHeight = header.offsetHeight;
+    const elementPosition = element.offsetTop - headerHeight - SCROLL_OFFSET;
 
-      window.history.pushState(null, "", `#${sectionId}`);
-    }
+    window.scrollTo({
+      top: elementPosition,
+      behavior: "smooth",
+    });
+
+    window.history.pushState(null, "", `#${sectionId}`);
   };
 
   const getThemeIcon = () => {
